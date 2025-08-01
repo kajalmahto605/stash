@@ -1,0 +1,51 @@
+base_oraclelinux:
+  playbooks:
+  - core-system-customization.yml
+base_ubuntu:
+  playbooks:
+  - core-system-customization.yml
+eclass_oraclelinux:
+  parent_groups:
+  - managed_oraclelinux
+  playbooks:
+  - eclass.yml
+eclass_ubuntu:
+  parent_groups:
+  - managed_ubuntu
+  playbooks:
+  - eclass.yml
+jimmy_test_group:
+  parent_groups:
+  - managed_ubuntu
+  playbooks:
+  - jimmy_test_group.yml
+managed_oraclelinux:
+  parent_groups:
+  - base_oraclelinux
+  playbooks:
+  - managed-system-customization.yml
+managed_ubuntu:
+  parent_groups:
+  - base_ubuntu
+  playbooks:
+  - managed-system-customization.yml
+ssrp_amigprd:
+  parent_groups:
+  - managed_ubuntu
+  playbooks:
+  - ssrp_amigprd.yml
+ssrp_amwebprd:
+  parent_groups:
+  - managed_ubuntu
+  playbooks:
+  - ssrp_amwebprd.yml
+unmanaged_ubuntu:
+  parent_groups:
+  - base_ubuntu
+  playbooks:
+  - unmanaged_ubuntu.yml
+test_windows:
+  playbooks:
+  - test_windows.yml
+
+ 
